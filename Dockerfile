@@ -1,6 +1,6 @@
 FROM node:16
 
-WORKDIR /vue_app
+WORKDIR /home/vueapp
 
 COPY package.json .
 

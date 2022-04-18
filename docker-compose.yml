@@ -7,10 +7,13 @@ services:
 
     image: vueapp:1.0.0
     container_name: vueapp
+    restart: always
     ports:
       - "8080:8080"
     volumes:
       - vuevolume:/home/vueapp
+    environment: 
+      - CHOKIDAR_USEPOLLING=true
 
 volumes:
   vuevolume:
