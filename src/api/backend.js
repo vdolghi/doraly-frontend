@@ -3,23 +3,25 @@ import axios from 'axios';
 class Backend {
   baseUrl = 'http://localhost:3000/products';
 
-  getOne(id) {
-    return axios.get(this.baseUrl + "/" + id);
+  async getOne(id) {
+    const result = await axios.get(this.baseUrl + "/" + id);
+    return result.data;
   }
 
-  getAll() {
-    return axios.get(this.baseUrl);
+  async getAll() {
+    const result = await axios.get(this.baseUrl);
+    return result.data;
   }
 
-  create(data) {
+  async create(data) {
     return axios.post(this.baseUrl, data);
   }
 
-  update(id, data) {
+  async update(id, data) {
     return axios.patch(this.baseUrl + "/" + id, data);
   }
 
-  delete(id) {
+  async delete(id) {
     return axios.delete(this.baseUrl + "/" + id);
   }
 }
